@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Trade.Application.Factory;
 using Trade.Application.Interfaces;
-using Trade.Application.Interfaces.Factory;
 using Trade.Application.Risks;
 
 namespace Trade.Application.Implementations
 {
-    class TradeRiskFactory : ITradeFactory
+    class TradeRiskFactory : TradeFactory
     {
-        public string ReturnRisk(ITrade trade)
+        public override string ReturnRisk(ITrade trade)
         {
             LowRisk lowRisk = new LowRisk();
             MediumRisk mediumRisk = new MediumRisk();
